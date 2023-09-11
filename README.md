@@ -1,2 +1,2 @@
 # Belajar-Node.js
-Mini Project : ``On going``
+Mini Project : ``Contact-App``
