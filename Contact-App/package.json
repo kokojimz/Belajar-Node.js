@@ -1,0 +1,14 @@
+{
+  "name": "contact-app",
+  "version": "1.0.0",
+  "description": "Contact-App project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kokojimz",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^16.2.0"
+  }
+}
