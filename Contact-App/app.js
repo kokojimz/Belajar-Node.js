@@ -1,4 +1,5 @@
 const yargs = require("yargs");
+const { simpanContact } = require("./contacts");
 
 
 yargs.command({
@@ -20,41 +21,10 @@ yargs.command({
             demandOption: true,
             type: 'string'
         }
+    },
+    handler(argv) {
+        simpanContact(argv.nama,argv.noHP,argv.email);
     }
 });
 
 yargs.parse();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const {pertanyaan,simpanContact} = require('./contacts');
-// const main = async() => {
-//     const nama = await pertanyaan('Masukkan nama anda: ');
-//     const noHP = await pertanyaan('Masukkan nomor HP anda: ');
-//     const email = await pertanyaan('Masukkan email anda: ');
-
-//     simpanContact(nama,noHP,email);
-// };
-
-// main();
