@@ -1,10 +1,11 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
+const app = express();
+const port = 3000;
 
 //using ejs
 app.set('view engine','ejs');
-
+app.use(expressLayouts);
 
 app.get('/', (req, res) => {
     // res.sendFile('./index.html', {root: __dirname});
@@ -26,16 +27,23 @@ app.get('/', (req, res) => {
         }
     ];
     res.render('index',{
+        layout : 'layouts/main-layout.ejs',
         nama: "Reynaldy",
         title: 'Halaman Home',
         mahasiswa
     });
 });
 app.get('/about', (req, res) => {
-    res.render('about');
+    res.render('about',{
+        layout : 'layouts/main-layout.ejs',
+        title: 'Halaman About'
+    });
 });
 app.get('/contact', (req, res) => {
-    res.render('contact');
+    res.render('contact',{
+        layout : 'layouts/main-layout.ejs',
+        title: 'Halaman Contact'
+    });
 });
 app.get('/product/:id', (req, res) => {
     res.send(`Product ID : ${req.params.id}</br>Category ID : ${req.query.category}`);
